@@ -14,6 +14,7 @@
 		9F6934FB20935908007665C5 /* Werkstuk2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F6934F920935908007665C5 /* Werkstuk2.xcdatamodeld */; };
 		9F6934FD2093590A007665C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6934FC2093590A007665C5 /* Assets.xcassets */; };
 		9F6935002093590A007665C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6934FE2093590A007665C5 /* LaunchScreen.storyboard */; };
+		9FF8AC80209C8F410027B0BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8AC7F209C8F410027B0BD /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9F6934FC2093590A007665C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6934FF2093590A007665C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6935012093590A007665C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FF8AC7F209C8F410027B0BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				9F6935012093590A007665C5 /* Info.plist */,
 				9F6934F920935908007665C5 /* Werkstuk2.xcdatamodeld */,
 				9F311B252096F03E0064FAC5 /* MyAnnotation.swift */,
+				9FF8AC7F209C8F410027B0BD /* DetailViewController.swift */,
 			);
 			path = Werkstuk2;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				9F6934FB20935908007665C5 /* Werkstuk2.xcdatamodeld in Sources */,
 				9F6934F520935908007665C5 /* ViewController.swift in Sources */,
+				9FF8AC80209C8F410027B0BD /* DetailViewController.swift in Sources */,
 				9F311B262096F03E0064FAC5 /* MyAnnotation.swift in Sources */,
 				9F6934F320935908007665C5 /* AppDelegate.swift in Sources */,
 			);
