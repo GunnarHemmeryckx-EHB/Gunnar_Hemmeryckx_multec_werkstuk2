@@ -20,6 +20,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barTintColor = UIColor(red:1.00, green:0.83, blue:0.20, alpha:1.0)//UIColor.yellow//fed332
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         self.managedContext = appDelegate.persistentContainer.viewContext
         
@@ -32,6 +33,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             print("First launch, setting UserDefault.")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             loadData()
+            //makeAnnotation()
         }
         
         //loadData()
@@ -47,7 +49,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func loadData(){
-        //self.deleteData()
+        self.opgehaaldeStations.removeAll()
+        print("ARRAY IN LOAD: \(self.opgehaaldeStations)")
         print("LOAD")
         let url = URL(string: "https://api.jcdecaux.com/vls/v1/stations?apiKey=6d5071ed0d0b3b68462ad73df43fd9e5479b03d6&contract=Bruxelles-Capitale")
         let urlRequest = URLRequest(url: url!)
@@ -76,7 +79,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 if let stations = json {
                     if let firstObject = stations.first {
                     }
-                    for i in 0..<5{
+                    for i in 0..<10{
                         let station = stations[i]
                         let name = station["name"] as? String
                         let adress = station["address"] as? String
@@ -101,15 +104,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                         villo_station.contract_name = contract_name!
                         villo_station.last_update = last_update!
                         villo_station.status = status
+                        
+                        self.opgehaaldeStations.append(villo_station)
                         do{
-                            self.opgehaaldeStations.append(villo_station)
                             try self.managedContext!.save()
-                            self.makeAnnotation()
                         }
                         catch{
                             fatalError("Failure to save context: \(error)")
                             
                         }
+                    }
+                    
+                    DispatchQueue.main.async{
+                        self.makeAnnotation()
                     }
                     for station in stations {
                         // access all objects in array
@@ -126,18 +133,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func makeAnnotation(){
         
         let stationFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Villo_Station")
-        //let opgehaaldePersonen:[Persoon]
         do{
             self.opgehaaldeStations = try self.managedContext!.fetch(stationFetch) as! [Villo_Station]
-            //print(self.opgehaaldePersonen[0].naam!)
-            //print(self.opgehaaldePersonen.count)
         }
         catch{
             fatalError("Failed to fetch employees: \(error)")
             
         }
         for station in self.opgehaaldeStations {
-            let annotation = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.lat, longitude: station.long), title: station.name!, subtitle: String(station.available_bikes))
+            let date = NSDate(timeIntervalSince1970: TimeInterval(station.last_update))
+            
+            let dayTimePeriodFormatter = DateFormatter()
+            dayTimePeriodFormatter.dateFormat = "HH:mm"
+            
+            let dateString = dayTimePeriodFormatter.string(from: date as Date)
+            let annotation = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.lat, longitude: station.long), title: station.name!, subtitle: "Available bikes: \(String(station.available_bikes))  Last update: \(dateString)")
             self.mapView.addAnnotation(annotation)
         }
         
@@ -145,18 +155,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     //https://cocoacasts.com/how-to-delete-every-record-of-a-core-data-entity
     func deleteData(){
         let stationFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Villo_Station")
-        //let opgehaaldePersonen:[Persoon]
         do{
             self.opgehaaldeStations = try self.managedContext!.fetch(stationFetch) as! [Villo_Station]
             
             for station in self.opgehaaldeStations {
                 self.managedContext!.delete(station)
             }
-            self.opgehaaldeStations.removeAll()
-            
-            print("ManagedContext in deleteData: \(managedContext!)")
-            print("delete")
-            print("ARRAY in deleteData: \(self.opgehaaldeStations)")
             // Save Changes
             try self.managedContext!.save()
         }
@@ -194,24 +198,34 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
         //if let annotationTitle = view.annotation?.title{
-            print("User tapped on annotation with title: \(view.annotation!)")
+        print("User tapped on annotation with title: \(view.annotation?.title!)")
         //}
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             //print("button tapped")
-            performSegue(withIdentifier: "toTheMoon", sender: view)
+            performSegue(withIdentifier: "toDetail", sender: view)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toTheMoon" )
+        if (segue.identifier == "toDetail" )
         {
-            var destinationVC = segue.destination as! DetailViewController
-            
+            let destinationVC = segue.destination as! DetailViewController
+            destinationVC.opgehaaldeStations = self.opgehaaldeStations
             destinationVC.antitle = (sender as! MKAnnotationView).annotation!.title!
             
         }
     }
+    @IBAction func btnReload(_ sender: Any) {
+        print("reload btn click")
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        print("delete annotations")
+        deleteData()
+        print("delete")
+        loadData()
+        print("load")
+    }
+    
     
 }
 
