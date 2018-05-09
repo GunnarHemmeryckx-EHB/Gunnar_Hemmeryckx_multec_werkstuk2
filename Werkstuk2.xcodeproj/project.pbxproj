@@ -11,6 +11,11 @@
 		9F1075A320A0D3B500CB751A /* VilloAnnotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1075A220A0D3B500CB751A /* VilloAnnotation.png */; };
 		9F21C94F20A05F56005091FB /* Logo Villo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F21C94E20A05F56005091FB /* Logo Villo.jpg */; };
 		9F311B262096F03E0064FAC5 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F311B252096F03E0064FAC5 /* MyAnnotation.swift */; };
+		9F4D957D20A33052006A5912 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D957220A33051006A5912 /* 120.png */; };
+		9F4D957F20A33052006A5912 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D957420A33051006A5912 /* 58.png */; };
+		9F4D958120A33052006A5912 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D957620A33052006A5912 /* 40.png */; };
+		9F4D958320A33052006A5912 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D957820A33052006A5912 /* 1024.png */; };
+		9F4D958620A33052006A5912 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D957B20A33052006A5912 /* 80.png */; };
 		9F623EC120A31091006AF973 /* VilloAnnotationFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC020A31091006AF973 /* VilloAnnotationFull.png */; };
 		9F623EC820A31C20006AF973 /* sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC220A31C1F006AF973 /* sign.png */; };
 		9F623EC920A31C20006AF973 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC320A31C1F006AF973 /* locked.png */; };
@@ -40,6 +45,11 @@
 		9F4D956B20A32716006A5912 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		9F4D956C20A32717006A5912 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9F4D956D20A32717006A5912 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F4D957220A33051006A5912 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		9F4D957420A33051006A5912 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
+		9F4D957620A33052006A5912 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		9F4D957820A33052006A5912 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		9F4D957B20A33052006A5912 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
 		9F623EC020A31091006AF973 /* VilloAnnotationFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VilloAnnotationFull.png; sourceTree = "<group>"; };
 		9F623EC220A31C1F006AF973 /* sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign.png; sourceTree = "<group>"; };
 		9F623EC320A31C1F006AF973 /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 		9F21C94B20A0568C005091FB /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9F4D957020A33020006A5912 /* AppIcons */,
 				9F623EC020A31091006AF973 /* VilloAnnotationFull.png */,
 				9F623EC720A31C20006AF973 /* bicycle.png */,
 				9F623EC320A31C1F006AF973 /* locked.png */,
@@ -90,6 +101,18 @@
 				9F10759C20A0D14200CB751A /* VilloLogoPNG.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		9F4D957020A33020006A5912 /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				9F4D957620A33052006A5912 /* 40.png */,
+				9F4D957420A33051006A5912 /* 58.png */,
+				9F4D957B20A33052006A5912 /* 80.png */,
+				9F4D957220A33051006A5912 /* 120.png */,
+				9F4D957820A33052006A5912 /* 1024.png */,
+			);
+			path = AppIcons;
 			sourceTree = "<group>";
 		};
 		9F6934E620935907007665C5 = {
@@ -205,15 +228,20 @@
 				9F1075A320A0D3B500CB751A /* VilloAnnotation.png in Resources */,
 				9F623EC820A31C20006AF973 /* sign.png in Resources */,
 				9F623EC920A31C20006AF973 /* locked.png in Resources */,
+				9F4D958120A33052006A5912 /* 40.png in Resources */,
+				9F4D957F20A33052006A5912 /* 58.png in Resources */,
 				9F6934FD2093590A007665C5 /* Assets.xcassets in Resources */,
 				9F623ECB20A31C20006AF973 /* skyline.png in Resources */,
 				9FE4339420A2DAA500A66DD1 /* Localizable.strings in Resources */,
+				9F4D958620A33052006A5912 /* 80.png in Resources */,
 				9F6934F820935908007665C5 /* Main.storyboard in Resources */,
 				9F10759D20A0D14200CB751A /* VilloLogoPNG.png in Resources */,
 				9F623ECC20A31C20006AF973 /* unlocked.png in Resources */,
 				9F623EC120A31091006AF973 /* VilloAnnotationFull.png in Resources */,
 				9F21C94F20A05F56005091FB /* Logo Villo.jpg in Resources */,
+				9F4D957D20A33052006A5912 /* 120.png in Resources */,
 				9F623ECA20A31C20006AF973 /* parking-sign.png in Resources */,
+				9F4D958320A33052006A5912 /* 1024.png in Resources */,
 				9F623ECD20A31C20006AF973 /* bicycle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

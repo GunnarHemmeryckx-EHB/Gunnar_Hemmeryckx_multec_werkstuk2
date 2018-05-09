@@ -4,7 +4,7 @@
 //
 //  Created by Gunnar Hemmeryckx on 4/05/18.
 //  Copyright © 2018 Gunnar Hemmeryckx. All rights reserved.
-//
+//ICONEN AFKOMSTIG VAN Flaticon.com
 
 import UIKit
 import CoreData
@@ -40,13 +40,8 @@ class DetailViewController: UIViewController {
         self.lblName.lineBreakMode = .byWordWrapping
         self.lblName.numberOfLines = 2
         self.lblName.adjustsFontSizeToFitWidth = true
-        
-        //https://stackoverflow.com/questions/47297053/swift-4-cannot-subscript-a-value-of-type-string-with-an-index-of-type-counta
-        let titel = station?.name as! String
-        let idx = titel.index(titel.startIndex, offsetBy: 5)
-        let substr = titel[idx...]
-        
-        self.lblName.text = String(substr)
+                
+        self.lblName.text = station?.name//String(substr)
         self.lblContract_name.text = station?.contract_name
         self.lblAdress.lineBreakMode = .byWordWrapping
         self.lblAdress.numberOfLines = 0
@@ -55,6 +50,8 @@ class DetailViewController: UIViewController {
         self.lblAvailableBikes.text = "\(station!.available_bikes)"
         self.lblAvailable_Bike_Stands.text = "\(station!.available_bike_stands)"
         self.lblStatus.text = station?.status
+        
+        //ICOON VAN STATUS AANPASSEN NAARGELANG DE STATUS
         if(station?.status == "OPEN"){
             self.StatusImage.image = UIImage(named: "unlocked")
             self.StatusLabel.text = NSLocalizedString("Status", comment: "")
