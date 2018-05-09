@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "7by-VH-TI3"; */
+"7by-VH-TI3.text" = "Name";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "O8e-ap-Vw1"; */
+"O8e-ap-Vw1.title" = "Back";
+
+/* Class = "UILabel"; text = "available bikes"; ObjectID = "Yvt-BV-9IY"; */
+"Yvt-BV-9IY.text" = "available bikes";
+
+/* Class = "UILabel"; text = "Contract_name"; ObjectID = "dWu-eO-wm0"; */
+"dWu-eO-wm0.text" = "Contract_name";
+
+/* Class = "UILabel"; text = "Adress"; ObjectID = "hXV-6q-M9H"; */
+"hXV-6q-M9H.text" = "Adress";
+
+/* Class = "UILabel"; text = "Test"; ObjectID = "hfa-PN-r5u"; */
+"hfa-PN-r5u.text" = "Test";
+
+/* Class = "UILabel"; text = "Available bike stands"; ObjectID = "sPB-hI-1zU"; */
+"sPB-hI-1zU.text" = "Available bike stands";
+
+/* Class = "UINavigationItem"; title = "Villo Stations"; ObjectID = "zy4-rG-Vmw"; */
+"zy4-rG-Vmw.title" = "Villo Stations";

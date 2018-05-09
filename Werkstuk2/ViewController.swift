@@ -14,8 +14,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     var opgehaaldeStations = [Villo_Station]()
     var managedContext:NSManagedObjectContext?
+    let lastUpdateUserDef = UserDefaults.standard
+    var locationManager = CLLocationManager()
     
+    @IBOutlet weak var lblLastUpdate: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,25 +37,32 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             print("First launch, setting UserDefault.")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             loadData()
-            //makeAnnotation()
+            
+            lastUpdateUserDef.set(Date(), forKey:"lastUpdate")
         }
         
-        //loadData()
-        //makeAnnotation()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        //locationManager.delegate = self
+        
+        //Date omzetten naar dd-MM-yyy HH:mm formaat
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "dd-MM-yyy HH:mm"
+        let lastUpdateTime = lastUpdateUserDef.object(forKey: "lastUpdate") as! Date
+        self.lblLastUpdate.text = "last update: \(dateFormatterGet.string(from: lastUpdateTime))"
         print("ARRAY: \(self.opgehaaldeStations)")
+       
         mapView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func loadData(){
         self.opgehaaldeStations.removeAll()
         print("ARRAY IN LOAD: \(self.opgehaaldeStations)")
-        print("LOAD")
         let url = URL(string: "https://api.jcdecaux.com/vls/v1/stations?apiKey=6d5071ed0d0b3b68462ad73df43fd9e5479b03d6&contract=Bruxelles-Capitale")
         let urlRequest = URLRequest(url: url!)
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -77,9 +88,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 //var stations = [String]()
                 
                 if let stations = json {
-                    if let firstObject = stations.first {
-                    }
-                    for i in 0..<10{
+                    for i in 0..<5{
                         let station = stations[i]
                         let name = station["name"] as? String
                         let adress = station["address"] as? String
@@ -90,7 +99,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                         let available_bikes = station["available_bikes"] as? Int16
                         let bike_stands = station["available_bikes"] as? Int16
                         let contract_name = station["contract_name"] as? String
-                        let last_update = station["last_update"] as? Int64
                         let status = station["status"] as? String
                         
                         let villo_station = NSEntityDescription.insertNewObject(forEntityName: "Villo_Station", into: self.managedContext!) as! Villo_Station
@@ -102,7 +110,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                         villo_station.available_bikes = available_bikes!
                         villo_station.bike_stands = bike_stands!
                         villo_station.contract_name = contract_name!
-                        villo_station.last_update = last_update!
                         villo_station.status = status
                         
                         self.opgehaaldeStations.append(villo_station)
@@ -137,17 +144,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             self.opgehaaldeStations = try self.managedContext!.fetch(stationFetch) as! [Villo_Station]
         }
         catch{
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Kon geen stations ophalen \(error)")
             
         }
         for station in self.opgehaaldeStations {
-            let date = NSDate(timeIntervalSince1970: TimeInterval(station.last_update))
-            
-            let dayTimePeriodFormatter = DateFormatter()
-            dayTimePeriodFormatter.dateFormat = "HH:mm"
-            
-            let dateString = dayTimePeriodFormatter.string(from: date as Date)
-            let annotation = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.lat, longitude: station.long), title: station.name!, subtitle: "Available bikes: \(String(station.available_bikes))  Last update: \(dateString)")
+            let annotation = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.lat, longitude: station.long), title: station.name!, subtitle: "\(NSLocalizedString("Available bikes", comment: "")): \(String(station.available_bikes))")
             self.mapView.addAnnotation(annotation)
         }
         
@@ -169,28 +170,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
-    
-    
-    
     //https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        // 2
         guard let annotation = annotation as? MyAnnotation else { return nil }
-        // 3
         let identifier = "marker"
-        var view: MKMarkerAnnotationView
-        // 4
+        var view: MKAnnotationView
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             as? MKMarkerAnnotationView {
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
-            // 5
-            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.calloutOffset = CGPoint(x: -2, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .infoLight)
         }
+        
+        view.image = UIImage(named: "VilloAnnotation")
+        
         return view
     }
     
@@ -224,8 +221,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         print("delete")
         loadData()
         print("load")
+        lastUpdateUserDef.set(Date(), forKey:"lastUpdate")
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "dd-MM-yyy HH:mm"
+        let lastUpdateTime = lastUpdateUserDef.object(forKey: "lastUpdate") as! Date
+        self.lblLastUpdate.text = "last update: \(dateFormatterGet.string(from: lastUpdateTime))"
     }
-    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        //Locatie Brussel: latitude: 50.848676, longitude: 4.350378
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25)
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: true)
+    }
     
 }
 

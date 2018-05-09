@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F10759D20A0D14200CB751A /* VilloLogoPNG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F10759C20A0D14200CB751A /* VilloLogoPNG.png */; };
+		9F1075A320A0D3B500CB751A /* VilloAnnotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1075A220A0D3B500CB751A /* VilloAnnotation.png */; };
+		9F21C94F20A05F56005091FB /* Logo Villo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F21C94E20A05F56005091FB /* Logo Villo.jpg */; };
 		9F311B262096F03E0064FAC5 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F311B252096F03E0064FAC5 /* MyAnnotation.swift */; };
+		9F623EC120A31091006AF973 /* VilloAnnotationFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC020A31091006AF973 /* VilloAnnotationFull.png */; };
 		9F6934F320935908007665C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6934F220935908007665C5 /* AppDelegate.swift */; };
 		9F6934F520935908007665C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6934F420935908007665C5 /* ViewController.swift */; };
 		9F6934F820935908007665C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6934F620935908007665C5 /* Main.storyboard */; };
 		9F6934FB20935908007665C5 /* Werkstuk2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F6934F920935908007665C5 /* Werkstuk2.xcdatamodeld */; };
 		9F6934FD2093590A007665C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6934FC2093590A007665C5 /* Assets.xcassets */; };
 		9F6935002093590A007665C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6934FE2093590A007665C5 /* LaunchScreen.storyboard */; };
+		9FE4338F20A2D0CE00A66DD1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE4338E20A2D0CE00A66DD1 /* MapKit.framework */; };
+		9FE4339420A2DAA500A66DD1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FE4339620A2DAA500A66DD1 /* Localizable.strings */; };
 		9FF8AC80209C8F410027B0BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8AC7F209C8F410027B0BD /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F10759C20A0D14200CB751A /* VilloLogoPNG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VilloLogoPNG.png; sourceTree = "<group>"; };
+		9F1075A220A0D3B500CB751A /* VilloAnnotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VilloAnnotation.png; sourceTree = "<group>"; };
+		9F21C94E20A05F56005091FB /* Logo Villo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logo Villo.jpg"; sourceTree = "<group>"; };
 		9F311B252096F03E0064FAC5 /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		9F623EC020A31091006AF973 /* VilloAnnotationFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VilloAnnotationFull.png; sourceTree = "<group>"; };
 		9F6934EF20935908007665C5 /* Werkstuk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werkstuk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6934F220935908007665C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6934F420935908007665C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +37,11 @@
 		9F6934FC2093590A007665C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6934FF2093590A007665C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6935012093590A007665C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FE4338E20A2D0CE00A66DD1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9FE4339220A2DA5900A66DD1 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		9FE4339320A2DA5900A66DD1 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9FE4339520A2DAA500A66DD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9FE4339720A2DAAC00A66DD1 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9FF8AC7F209C8F410027B0BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,17 +50,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE4338F20A2D0CE00A66DD1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F21C94B20A0568C005091FB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9F623EC020A31091006AF973 /* VilloAnnotationFull.png */,
+				9F21C94E20A05F56005091FB /* Logo Villo.jpg */,
+				9F1075A220A0D3B500CB751A /* VilloAnnotation.png */,
+				9F10759C20A0D14200CB751A /* VilloLogoPNG.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		9F6934E620935907007665C5 = {
 			isa = PBXGroup;
 			children = (
 				9F6934F120935908007665C5 /* Werkstuk2 */,
 				9F6934F020935908007665C5 /* Products */,
+				9FE4338D20A2D0CE00A66DD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +88,7 @@
 		9F6934F120935908007665C5 /* Werkstuk2 */ = {
 			isa = PBXGroup;
 			children = (
+				9F21C94B20A0568C005091FB /* images */,
 				9F6934F220935908007665C5 /* AppDelegate.swift */,
 				9F6934F420935908007665C5 /* ViewController.swift */,
 				9F6934F620935908007665C5 /* Main.storyboard */,
@@ -69,8 +98,17 @@
 				9F6934F920935908007665C5 /* Werkstuk2.xcdatamodeld */,
 				9F311B252096F03E0064FAC5 /* MyAnnotation.swift */,
 				9FF8AC7F209C8F410027B0BD /* DetailViewController.swift */,
+				9FE4339620A2DAA500A66DD1 /* Localizable.strings */,
 			);
 			path = Werkstuk2;
+			sourceTree = "<group>";
+		};
+		9FE4338D20A2D0CE00A66DD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FE4338E20A2D0CE00A66DD1 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +143,11 @@
 				TargetAttributes = {
 					9F6934EE20935908007665C5 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -115,6 +158,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = 9F6934E620935907007665C5;
 			productRefGroup = 9F6934F020935908007665C5 /* Products */;
@@ -132,8 +176,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6935002093590A007665C5 /* LaunchScreen.storyboard in Resources */,
+				9F1075A320A0D3B500CB751A /* VilloAnnotation.png in Resources */,
 				9F6934FD2093590A007665C5 /* Assets.xcassets in Resources */,
+				9FE4339420A2DAA500A66DD1 /* Localizable.strings in Resources */,
 				9F6934F820935908007665C5 /* Main.storyboard in Resources */,
+				9F10759D20A0D14200CB751A /* VilloLogoPNG.png in Resources */,
+				9F623EC120A31091006AF973 /* VilloAnnotationFull.png in Resources */,
+				9F21C94F20A05F56005091FB /* Logo Villo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +208,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9F6934F720935908007665C5 /* Base */,
+				9FE4339220A2DA5900A66DD1 /* nl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -167,8 +217,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				9F6934FF2093590A007665C5 /* Base */,
+				9FE4339320A2DA5900A66DD1 /* nl */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9FE4339620A2DAA500A66DD1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FE4339520A2DAA500A66DD1 /* en */,
+				9FE4339720A2DAAC00A66DD1 /* nl */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -178,6 +238,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -238,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
