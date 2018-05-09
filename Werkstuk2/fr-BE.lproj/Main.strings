@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "7by-VH-TI3"; */
+"7by-VH-TI3.text" = "Name";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "AEa-NE-yds"; */
+"AEa-NE-yds.text" = "City";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "DEf-bV-HBE"; */
+"DEf-bV-HBE.text" = "Status";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "O8e-ap-Vw1"; */
+"O8e-ap-Vw1.title" = "Back";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "Yvt-BV-9IY"; */
+"Yvt-BV-9IY.text" = "20";
+
+/* Class = "UILabel"; text = "Contract_name"; ObjectID = "dWu-eO-wm0"; */
+"dWu-eO-wm0.text" = "Contract_name";
+
+/* Class = "UILabel"; text = "Adress"; ObjectID = "hXV-6q-M9H"; */
+"hXV-6q-M9H.text" = "Adress";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "hfN-4M-Ejk"; */
+"hfN-4M-Ejk.text" = "Status";
+
+/* Class = "UILabel"; text = "Test"; ObjectID = "hfa-PN-r5u"; */
+"hfa-PN-r5u.text" = "Test";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "lcy-IR-Vhb"; */
+"lcy-IR-Vhb.text" = "Address";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "sPB-hI-1zU"; */
+"sPB-hI-1zU.text" = "20";
+
+/* Class = "UINavigationItem"; title = "Villo Stations"; ObjectID = "zy4-rG-Vmw"; */
+"zy4-rG-Vmw.title" = "Villo Stations";

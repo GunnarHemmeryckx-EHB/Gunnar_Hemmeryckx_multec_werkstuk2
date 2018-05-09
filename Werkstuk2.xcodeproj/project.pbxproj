@@ -12,6 +12,12 @@
 		9F21C94F20A05F56005091FB /* Logo Villo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F21C94E20A05F56005091FB /* Logo Villo.jpg */; };
 		9F311B262096F03E0064FAC5 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F311B252096F03E0064FAC5 /* MyAnnotation.swift */; };
 		9F623EC120A31091006AF973 /* VilloAnnotationFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC020A31091006AF973 /* VilloAnnotationFull.png */; };
+		9F623EC820A31C20006AF973 /* sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC220A31C1F006AF973 /* sign.png */; };
+		9F623EC920A31C20006AF973 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC320A31C1F006AF973 /* locked.png */; };
+		9F623ECA20A31C20006AF973 /* parking-sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC420A31C1F006AF973 /* parking-sign.png */; };
+		9F623ECB20A31C20006AF973 /* skyline.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC520A31C20006AF973 /* skyline.png */; };
+		9F623ECC20A31C20006AF973 /* unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC620A31C20006AF973 /* unlocked.png */; };
+		9F623ECD20A31C20006AF973 /* bicycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F623EC720A31C20006AF973 /* bicycle.png */; };
 		9F6934F320935908007665C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6934F220935908007665C5 /* AppDelegate.swift */; };
 		9F6934F520935908007665C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6934F420935908007665C5 /* ViewController.swift */; };
 		9F6934F820935908007665C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6934F620935908007665C5 /* Main.storyboard */; };
@@ -28,7 +34,19 @@
 		9F1075A220A0D3B500CB751A /* VilloAnnotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VilloAnnotation.png; sourceTree = "<group>"; };
 		9F21C94E20A05F56005091FB /* Logo Villo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logo Villo.jpg"; sourceTree = "<group>"; };
 		9F311B252096F03E0064FAC5 /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		9F4D956820A3270B006A5912 /* fr-BE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-BE"; path = "fr-BE.lproj/Main.strings"; sourceTree = "<group>"; };
+		9F4D956920A3270B006A5912 /* fr-BE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-BE"; path = "fr-BE.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9F4D956A20A3270B006A5912 /* fr-BE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-BE"; path = "fr-BE.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9F4D956B20A32716006A5912 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		9F4D956C20A32717006A5912 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9F4D956D20A32717006A5912 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F623EC020A31091006AF973 /* VilloAnnotationFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VilloAnnotationFull.png; sourceTree = "<group>"; };
+		9F623EC220A31C1F006AF973 /* sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign.png; sourceTree = "<group>"; };
+		9F623EC320A31C1F006AF973 /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
+		9F623EC420A31C1F006AF973 /* parking-sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parking-sign.png"; sourceTree = "<group>"; };
+		9F623EC520A31C20006AF973 /* skyline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skyline.png; sourceTree = "<group>"; };
+		9F623EC620A31C20006AF973 /* unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlocked.png; sourceTree = "<group>"; };
+		9F623EC720A31C20006AF973 /* bicycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicycle.png; sourceTree = "<group>"; };
 		9F6934EF20935908007665C5 /* Werkstuk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werkstuk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6934F220935908007665C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6934F420935908007665C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +79,12 @@
 			isa = PBXGroup;
 			children = (
 				9F623EC020A31091006AF973 /* VilloAnnotationFull.png */,
+				9F623EC720A31C20006AF973 /* bicycle.png */,
+				9F623EC320A31C1F006AF973 /* locked.png */,
+				9F623EC420A31C1F006AF973 /* parking-sign.png */,
+				9F623EC220A31C1F006AF973 /* sign.png */,
+				9F623EC520A31C20006AF973 /* skyline.png */,
+				9F623EC620A31C20006AF973 /* unlocked.png */,
 				9F21C94E20A05F56005091FB /* Logo Villo.jpg */,
 				9F1075A220A0D3B500CB751A /* VilloAnnotation.png */,
 				9F10759C20A0D14200CB751A /* VilloLogoPNG.png */,
@@ -159,6 +183,8 @@
 				en,
 				Base,
 				nl,
+				"fr-BE",
+				fr,
 			);
 			mainGroup = 9F6934E620935907007665C5;
 			productRefGroup = 9F6934F020935908007665C5 /* Products */;
@@ -177,12 +203,18 @@
 			files = (
 				9F6935002093590A007665C5 /* LaunchScreen.storyboard in Resources */,
 				9F1075A320A0D3B500CB751A /* VilloAnnotation.png in Resources */,
+				9F623EC820A31C20006AF973 /* sign.png in Resources */,
+				9F623EC920A31C20006AF973 /* locked.png in Resources */,
 				9F6934FD2093590A007665C5 /* Assets.xcassets in Resources */,
+				9F623ECB20A31C20006AF973 /* skyline.png in Resources */,
 				9FE4339420A2DAA500A66DD1 /* Localizable.strings in Resources */,
 				9F6934F820935908007665C5 /* Main.storyboard in Resources */,
 				9F10759D20A0D14200CB751A /* VilloLogoPNG.png in Resources */,
+				9F623ECC20A31C20006AF973 /* unlocked.png in Resources */,
 				9F623EC120A31091006AF973 /* VilloAnnotationFull.png in Resources */,
 				9F21C94F20A05F56005091FB /* Logo Villo.jpg in Resources */,
+				9F623ECA20A31C20006AF973 /* parking-sign.png in Resources */,
+				9F623ECD20A31C20006AF973 /* bicycle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +241,8 @@
 			children = (
 				9F6934F720935908007665C5 /* Base */,
 				9FE4339220A2DA5900A66DD1 /* nl */,
+				9F4D956820A3270B006A5912 /* fr-BE */,
+				9F4D956B20A32716006A5912 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -218,6 +252,8 @@
 			children = (
 				9F6934FF2093590A007665C5 /* Base */,
 				9FE4339320A2DA5900A66DD1 /* nl */,
+				9F4D956920A3270B006A5912 /* fr-BE */,
+				9F4D956C20A32717006A5912 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -227,6 +263,8 @@
 			children = (
 				9FE4339520A2DAA500A66DD1 /* en */,
 				9FE4339720A2DAAC00A66DD1 /* nl */,
+				9F4D956A20A3270B006A5912 /* fr-BE */,
+				9F4D956D20A32717006A5912 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

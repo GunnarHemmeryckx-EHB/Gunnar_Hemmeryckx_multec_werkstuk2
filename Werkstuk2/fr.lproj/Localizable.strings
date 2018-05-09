@@ -5,12 +5,11 @@
   Created by Gunnar Hemmeryckx on 9/05/18.
   Copyright © 2018 Gunnar Hemmeryckx. All rights reserved.
 */
-
-"Welcome!" = "Welkom!";
+"Welcome!" = "Bienvenue!";
 "Available bikes stands" = "Beschikbare fietsenstallingen";
-"Available bikes" = "Beschikbare fietsen";
-"Closed" = "Gesloten";
-"Open" = "Open";
-"City" = "Stad";
-"Address" = "Adres";
-"Status" = "Status";
+"Available bikes" = "Vélos disponibles";
+"Closed" = "Fermé";
+"Open" = "Ouvert";
+"City" = "Ville";
+"Address" = "Adresse";
+"Status" = "Situation";

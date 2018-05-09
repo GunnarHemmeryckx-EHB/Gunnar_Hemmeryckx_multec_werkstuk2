@@ -14,7 +14,14 @@ class DetailViewController: UIViewController {
     
     var managedContext:NSManagedObjectContext?
     var opgehaaldeStations = [Villo_Station]()
-    var antitle:String?
+    var myTitle:String?
+    
+    //LABELS DIE VAN TAAL VERANDEREN
+    @IBOutlet weak var CityLabel: UILabel!
+    @IBOutlet weak var AddressLabel: UILabel!
+    @IBOutlet weak var StatusLabel: UILabel!
+    @IBOutlet weak var StatusImage: UIImageView!
+    
     
     @IBOutlet weak var lblContract_name: UILabel!
     @IBOutlet weak var lblName: UILabel!
@@ -25,7 +32,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let station = opgehaaldeStations.first(where: { $0.name == self.antitle })
+        let station = opgehaaldeStations.first(where: { $0.name == self.myTitle })
+        
+        self.CityLabel.text = NSLocalizedString("City", comment: "")
+        self.AddressLabel.text = NSLocalizedString("Address", comment: "")
         
         self.lblName.lineBreakMode = .byWordWrapping
         self.lblName.numberOfLines = 2
@@ -35,12 +45,6 @@ class DetailViewController: UIViewController {
         let titel = station?.name as! String
         let idx = titel.index(titel.startIndex, offsetBy: 5)
         let substr = titel[idx...]
-        if(station?.status == "CLOSED"){
-            self.lblName.textColor = UIColor.red
-        }
-        else{
-            self.lblName.textColor = UIColor.green
-        }
         
         self.lblName.text = String(substr)
         self.lblContract_name.text = station?.contract_name
@@ -48,9 +52,18 @@ class DetailViewController: UIViewController {
         self.lblAdress.numberOfLines = 0
         self.lblAdress.adjustsFontSizeToFitWidth = true
         self.lblAdress.text = station?.address
-        self.lblAvailableBikes.text = "\(NSLocalizedString("Available bikes", comment: "")): \(station!.available_bikes)"
-        self.lblAvailable_Bike_Stands.text = "\(NSLocalizedString("Available bikes stands", comment: "")): \(station!.available_bike_stands)"
+        self.lblAvailableBikes.text = "\(station!.available_bikes)"
+        self.lblAvailable_Bike_Stands.text = "\(station!.available_bike_stands)"
         self.lblStatus.text = station?.status
+        if(station?.status == "OPEN"){
+            self.StatusImage.image = UIImage(named: "unlocked")
+            self.StatusLabel.text = NSLocalizedString("Status", comment: "")
+            self.lblStatus.text = NSLocalizedString("Open", comment: "")
+        }else if (station?.status == "CLOSED"){
+             self.StatusImage.image = UIImage(named: "locked")
+            self.StatusLabel.text = NSLocalizedString("Status", comment: "")
+            self.lblStatus.text = NSLocalizedString("Closed", comment: "")
+        }
         
     }
 

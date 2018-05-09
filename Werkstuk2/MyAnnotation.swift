@@ -12,13 +12,15 @@ import MapKit
 class MyAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
+    var status: String?
     
     //SUBTITLE WANNEER MEN TAPT OP ANNOTATION: https://developer.apple.com/documentation/mapkit/mkannotation/1429520-subtitle
     var subtitle: String?
     
-    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, status: String) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
+        self.status = status
     }
 }

@@ -51,7 +51,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let lastUpdateTime = lastUpdateUserDef.object(forKey: "lastUpdate") as! Date
         self.lblLastUpdate.text = "last update: \(dateFormatterGet.string(from: lastUpdateTime))"
         print("ARRAY: \(self.opgehaaldeStations)")
-       
+        
         mapView.delegate = self
         
     }
@@ -148,7 +148,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
         }
         for station in self.opgehaaldeStations {
-            let annotation = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.lat, longitude: station.long), title: station.name!, subtitle: "\(NSLocalizedString("Available bikes", comment: "")): \(String(station.available_bikes))")
+            let annotation = MyAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.lat, longitude: station.long), title: station.name!, subtitle: "\(NSLocalizedString("Available bikes", comment: "")): \(String(station.available_bikes))", status: station.status!)
             self.mapView.addAnnotation(annotation)
         }
         
@@ -185,9 +185,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             view.calloutOffset = CGPoint(x: -2, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .infoLight)
         }
-        
-        view.image = UIImage(named: "VilloAnnotation")
-        
+        if(annotation.status == "OPEN"){
+            view.image = UIImage(named: "VilloAnnotation")
+        }
+        else{
+            view.image = UIImage(named: "VilloAnnotationFull")
+        }
         return view
     }
     
@@ -209,7 +212,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         {
             let destinationVC = segue.destination as! DetailViewController
             destinationVC.opgehaaldeStations = self.opgehaaldeStations
-            destinationVC.antitle = (sender as! MKAnnotationView).annotation!.title!
+            destinationVC.myTitle = (sender as! MKAnnotationView).annotation!.title!
             
         }
     }
