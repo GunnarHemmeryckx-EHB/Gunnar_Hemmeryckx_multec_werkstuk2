@@ -135,10 +135,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     DispatchQueue.main.async{
                         self.makeAnnotation()
                     }
-                    for station in stations {
-                        // access all objects in array
-                        // print(object)
-                    }
                 }
             }
             catch{
@@ -248,8 +244,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         dateFormatterGet.dateFormat = "dd-MM-yyy HH:mm"
         let lastUpdateTime = lastUpdateUserDef.object(forKey: "lastUpdate") as! Date
         //WIJZIG TEXT VAN LAATSTE UPDATE
-        self.lblLastUpdate.text = "last update: \(dateFormatterGet.string(from: lastUpdateTime))"
+        self.lblLastUpdate.text = "\(NSLocalizedString("last update", comment: "")): \(dateFormatterGet.string(from: lastUpdateTime))"
     }
+    
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         //Locatie Brussel: latitude: 50.848676, longitude: 4.350378
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
@@ -257,6 +255,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
     }
+    
+    
+    
     
     
     
@@ -280,14 +281,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 return
             }
             do{
-                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [AnyObject] else {
+                guard let villoJson = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [AnyObject] else {
                     print("failed JSONSerialization")
                     return
                 }
                 
                 //var stations = [String]()
                 
-                if let stations = json {
+                if let stations = villoJson {
                     for station in stations {
                         //let station = stations[i]
                         let name = station["name"] as? String
