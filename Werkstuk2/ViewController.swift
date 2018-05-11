@@ -48,7 +48,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //Date omzetten naar dd-MM-yyy HH:mm formaat
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd-MM-yyy HH:mm"
+        dateFormatterGet.dateFormat = "HH:mm dd/MM/yyy"
         let lastUpdateTime = lastUpdateUserDef.object(forKey: "lastUpdate") as! Date
         self.lblLastUpdate.text = "\(NSLocalizedString("last update", comment: "")): \(dateFormatterGet.string(from: lastUpdateTime))"
         print("ARRAY: \(self.opgehaaldeStations)")
@@ -187,16 +187,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         guard let annotation = annotation as? MyAnnotation else { return nil }
         let identifier = "marker"
         var view: MKAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            as? MKMarkerAnnotationView {
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
             view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -2, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .infoLight)
+            view.calloutOffset = CGPoint(x: 0, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
+        //ALS DE STATUS VAN HET STATION GESLOTEN IS, DE RODE ANNOTATION WEERGEVEN
         if(annotation.status == "OPEN"){
             view.image = UIImage(named: "VilloAnnotation")
         }
@@ -209,9 +209,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
-        //if let annotationTitle = view.annotation?.title{
-        print("User tapped on annotation with title: \(view.annotation?.title!)")
-        //}
+        print("Druk op annotation: \(view.annotation?.title!)")
     }
     
     //SEGUE NAAR DETAIL
@@ -241,7 +239,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         //PAS USERDEFAULT VOOR LAATSTE UPDATE AAN
         lastUpdateUserDef.set(Date(), forKey:"lastUpdate")
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd-MM-yyy HH:mm"
+        dateFormatterGet.dateFormat = "HH:mm dd/MM/yyy"
         let lastUpdateTime = lastUpdateUserDef.object(forKey: "lastUpdate") as! Date
         //WIJZIG TEXT VAN LAATSTE UPDATE
         self.lblLastUpdate.text = "\(NSLocalizedString("last update", comment: "")): \(dateFormatterGet.string(from: lastUpdateTime))"

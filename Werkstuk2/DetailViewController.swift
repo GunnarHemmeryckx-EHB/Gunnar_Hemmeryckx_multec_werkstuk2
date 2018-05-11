@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var StatusLabel: UILabel!
     @IBOutlet weak var StatusImage: UIImageView!
     
-    
     @IBOutlet weak var lblContract_name: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblAdress: UILabel!
@@ -32,25 +31,34 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Station gelijkstellen aan die uit opgehaalde array met zelfde naam
         let station = opgehaaldeStations.first(where: { $0.name == self.myTitle })
         
         self.CityLabel.text = NSLocalizedString("City", comment: "")
         self.AddressLabel.text = NSLocalizedString("Address", comment: "")
         
+        
+        //---GROTE VAN LABEL AANPASSEN AAN TEKST----
         self.lblName.lineBreakMode = .byWordWrapping
         self.lblName.numberOfLines = 2
         self.lblName.adjustsFontSizeToFitWidth = true
-                
-        self.lblName.text = station?.name//String(substr)
+        //---------------
+        self.lblName.text = station?.name
+        
+        self.lblAvailableBikes.text = "\(station!.available_bikes)"
+        self.lblAvailable_Bike_Stands.text = "\(station!.available_bike_stands)"
+        
         self.lblContract_name.text = station?.contract_name
+        
+        //---GROTE VAN LABEL AANPASSEN AAN TEKST----
         self.lblAdress.lineBreakMode = .byWordWrapping
         self.lblAdress.numberOfLines = 0
         self.lblAdress.adjustsFontSizeToFitWidth = true
+        //-----------------
         self.lblAdress.text = station?.address
-        self.lblAvailableBikes.text = "\(station!.available_bikes)"
-        self.lblAvailable_Bike_Stands.text = "\(station!.available_bike_stands)"
-        self.lblStatus.text = station?.status
         
+        
+        self.lblStatus.text = station?.status
         //ICOON VAN STATUS AANPASSEN NAARGELANG DE STATUS
         if(station?.status == "OPEN"){
             self.StatusImage.image = UIImage(named: "unlocked")
